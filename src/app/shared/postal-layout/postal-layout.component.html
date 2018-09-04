@@ -1,0 +1,23 @@
+<div class="postal-container" fxLayout="column">
+  <div class="back-home-button">
+    <app-icon-button name="home" href="./"></app-icon-button>
+  </div>
+  <div class="postal-header-container" fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="30px">
+    <div class="portal-title-container" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-xs="row" fxFlex="66%">
+      <div class="postal-title" fxFlex="40%">
+        <ng-content select="app-postal-title"></ng-content>
+      </div>
+      <div class="postal-title" fxFlex="60%">
+        <ng-content select="app-postal-title-note"></ng-content>
+      </div>
+    </div>
+
+    <div class="postal-options-container" fxFlex="34%">
+      <ng-content select="app-postal-options"></ng-content>
+    </div>
+  </div>
+
+  <div class="postal-content-container">
+    <ng-content select="app-postal-content"></ng-content>
+  </div>
+</div>

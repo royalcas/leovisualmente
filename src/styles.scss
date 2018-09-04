@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "palette";
+
 * {
   box-sizing: border-box;
 }
@@ -6,4 +8,44 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "Fanwood Text", serif;
+  color: #000;
+  font-size: 1rem;
+}
+
+.container {
+  margin: auto;
+  width: 90%;
+}
+
+h1 {
+  font-size: 6rem;
+  color: $main-color;
+}
+
+h2 {
+  font-size: 3rem;
+  color: $primary-color;
+}
+
+.primary {
+  font-family: "Cedarville Cursive", cursive;
+  color: $primary-color;
+}
+
+.accent {
+  font-family: "Cedarville Cursive", cursive;
+  color: $accent-color;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.mutted {
+  color: silver;
 }

@@ -1,0 +1,11 @@
+<div *ngIf="tagSelections?.length; else noLabelsTemplate" class="tag-selection-container">
+  <button *ngFor="let tagSelection of tagSelections" class="tag-item accent" [class.selected]="tagSelection.selected"
+    (click)="onSelect(tagSelection.tag, $event)">
+    {{tagSelection.tag}}
+  </button>
+</div>
+
+
+<ng-template #noLabelsTemplate>
+  <div class="mutted">There are no labels to filter</div>
+</ng-template>
