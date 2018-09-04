@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "publish:gh": "ng build --aot --prod --base-href '/leovisualmente/' --output-path 'docs'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
