@@ -12,15 +12,15 @@ const appRoutes: Routes = [
   { path: 'home', component: IndexComponent },
   {
     path: 'contact',
-    loadChildren: () => ContactMeModule
+    loadChildren: './contact-me/contact-me.module#ContactMeModule'
   },
   {
     path: 'my-work',
-    loadChildren: () => PortfolioModule
+    loadChildren: './portfolio/portfolio.module#PortfolioModule'
   },
   {
     path: 'funny-facts',
-    loadChildren: () => FunnyFactsModule
+    loadChildren: './funny-facts/funny-facts.module#FunnyFactsModule'
   },
   { path: 'posters', loadChildren: () => PostersModule },
   { path: '**', component: PageNotFoundComponent }
