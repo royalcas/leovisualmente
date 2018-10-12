@@ -9,6 +9,11 @@
     <app-tag-selection [tags]="['Books', 'Movies', 'Food']"></app-tag-selection>
   </app-postal-options>
   <app-postal-content>
-    <app-bubble></app-bubble>
+    <ng-container *ngIf="data$ | async as data; else noData">
+      <app-bubble [bubbles]="data"></app-bubble>
+    </ng-container>
+    <ng-template #noData>
+      Not Funny for your selection :(
+    </ng-template>
   </app-postal-content>
 </app-postal-layout>

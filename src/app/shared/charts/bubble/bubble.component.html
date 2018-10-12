@@ -1,5 +1,10 @@
-<svg class="bubbles" width="930" height="930" #chartWrapper>
-  <g *ngFor="let d of data" fill="red">
-    <circle [attr.r]="d.r" [attr.cx]="d.x" [attr.cy]="d.y" attr.fill="red"></circle>
-  </g>
-</svg>
+<div class="bubbles-container" #container>
+  <svg class="bubbles" width="100%" [attr.height]="height" #chartWrapper>
+    <g *ngFor="let d of data" fill="white" [attr.transform]="getTranslate(d.x, d.y)">
+      <circle [attr.r]="d.r" [attr.fill]="randomColor">
+      </circle>
+      <text text-anchor="middle" stroke-width="1px">{{d.data.text}}</text>
+    </g>
+  </svg>
+
+</div>

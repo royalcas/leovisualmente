@@ -1,4 +1,4 @@
 export interface IBubbleItem {
   text: string;
-  linkUrl: string;
+  linkUrl?: string;
 }
