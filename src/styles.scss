@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "palette";
 
-* {
+body * {
   box-sizing: border-box;
+  font-size: 2rem;
 }
 
 body {
@@ -48,4 +49,23 @@ p {
 
 .mutted {
   color: silver;
+}
+
+.actions {
+  text-align: right;
+}
+
+
+button {
+  cursor: pointer;
+  border: 0px;
+  padding: 6px 20px;
+  transition: background-color .3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #FAFAFA;
+    outline-width: 0;
+  }
 }

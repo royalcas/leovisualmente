@@ -1,0 +1,27 @@
+.contact-greeting {
+  font-size: 2rem;
+  font-family: "Cedarville Cursive", cursive;
+}
+
+.contact-message-wrapper {
+  background-color: #fff;
+  background-image:
+    linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 2.4rem;
+}
+
+#contactMesage {
+  color: #444;
+  background: transparent;
+  width: 100%;
+  border: 0px;
+  line-height: 1.23;
+  resize: none;
+
+  &:focus {
+    color: black;
+    box-shadow: none;
+    border: none;
+    outline-width: 0;
+  }
+}

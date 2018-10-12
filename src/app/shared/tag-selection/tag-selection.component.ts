@@ -37,7 +37,9 @@ export class TagSelectionComponent implements OnInit {
   }
 
   emitValues() {
-    const tags = this.tagSelections.map(selection => selection.tag);
+    const tags = this.tagSelections
+      .filter(selection => selection.selected)
+      .map(selection => selection.tag);
     this.change.emit(tags);
   }
 }

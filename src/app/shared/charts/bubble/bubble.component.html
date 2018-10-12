@@ -1,0 +1,5 @@
+<svg class="bubbles" width="930" height="930" #chartWrapper>
+  <g *ngFor="let d of data" fill="red">
+    <circle [attr.r]="d.r" [attr.cx]="d.x" [attr.cy]="d.y" attr.fill="red"></circle>
+  </g>
+</svg>

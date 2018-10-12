@@ -1,3 +1,14 @@
-<p>
-  funny-facts works!
-</p>
+<app-postal-layout>
+  <app-postal-title>
+    Fun Facts
+  </app-postal-title>
+  <app-postal-title-note>
+    Things I have read, watched, and eaten, but mostly, things I like and love
+  </app-postal-title-note>
+  <app-postal-options>
+    <app-tag-selection [tags]="['Books', 'Movies', 'Food']"></app-tag-selection>
+  </app-postal-options>
+  <app-postal-content>
+    <app-bubble></app-bubble>
+  </app-postal-content>
+</app-postal-layout>
