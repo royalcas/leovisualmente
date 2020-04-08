@@ -15,6 +15,7 @@ import { TagSelectionComponent } from './tag-selection/tag-selection.component';
 import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material.module';
 import { BubbleComponent } from './charts/bubble/bubble.component';
+import { SocialLinksComponent } from './postal-layout/social-links/social-links.component';
 
 @NgModule({
   imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule],
@@ -29,7 +30,8 @@ import { BubbleComponent } from './charts/bubble/bubble.component';
     TagSelectionComponent,
     LoadingComponent,
     DialogGalleryComponent,
-    GalleryComponent
+    GalleryComponent,
+    SocialLinksComponent
   ],
   exports: [
     MainLayoutComponent,
@@ -44,7 +46,8 @@ import { BubbleComponent } from './charts/bubble/bubble.component';
     MaterialModule,
     DialogGalleryComponent,
     GalleryComponent,
-    ChartsModule
+    ChartsModule,
+    SocialLinksComponent
   ],
   entryComponents: [DialogGalleryComponent]
 })
