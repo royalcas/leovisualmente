@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "palette";
+@import "fonts";
 
 body * {
   box-sizing: border-box;
@@ -9,7 +10,7 @@ body * {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Fanwood Text", serif;
+  font-family: "MetaPro-Book", serif;
   color: #000;
   font-size: 1rem;
 }

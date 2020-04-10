@@ -1,4 +1,4 @@
-import { portfolioData } from "./portfolio.data";
+import { ContentfulService } from './../../../shared/services/contentful.service';
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { map, mergeMap } from "rxjs/operators";
@@ -9,10 +9,10 @@ import { IDialogGalleryModel } from "../../../shared/dialog-gallery/idialog-gall
   providedIn: "root"
 })
 export class PortfolioService {
-  constructor() {}
+  constructor(private contentful: ContentfulService) {}
 
   getProjects(): Observable<IProject[]> {
-    return of(portfolioData).pipe(
+    return this.contentful.getProjects().pipe(
       map((data: IProject[]) => data.sort((a, b) => b.id - a.id))
     );
   }
@@ -35,7 +35,7 @@ export class PortfolioService {
     return {
       title: item.projectName,
       description: item.description,
-      images: item.images,
+      images: item.images.map(image => image.url),
       tags: item.tags
     };
   }

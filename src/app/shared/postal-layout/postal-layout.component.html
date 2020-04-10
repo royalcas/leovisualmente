@@ -1,24 +1,57 @@
-<div class="postal-container" fxLayout="column">
-  <div class="back-home-button">
-    <app-icon-button name="home" href="./"></app-icon-button> <app-social-links></app-social-links>
-  </div>
-  <div class="postal-header-container" fxLayout.gt-md="row" fxLayout="column" fxLayoutGap="30px">
-    <div class="portal-title-container" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
-      fxFlex.gt-md="70%" fxFlex="grow">
-      <div class="postal-title" fxFlex.gt-md="40%">
-        <ng-content select="app-postal-title"></ng-content>
+<div class="app-container" fxLayout="row">
+  <aside class="side-bar-container">
+    <nav>
+      <ul>
+        <li>
+          <button mat-icon-button aria-label="Spades">
+            <mat-icon svgIcon="spades-off" aria-hidden></mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button aria-label="Diamonds">
+            <mat-icon svgIcon="diamonds-off" aria-hidden></mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button aria-label="Clubs">
+            <mat-icon svgIcon="clubs-off" aria-hidden></mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button aria-label="Hearths">
+            <mat-icon svgIcon="hearths-off" aria-hidden></mat-icon>
+          </button>
+        </li>
+        <li>
+          <button mat-icon-button aria-label="Ducks">
+            <mat-icon svgIcon="duck-off" aria-hidden></mat-icon>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="postal-container">
+    <header class="header-container">
+      <div></div><app-icon-button name="LeoIcon" href="./"></app-icon-button> <app-social-links></app-social-links>
+    </header>
+    <div class="postal-header-container" fxLayout.gt-md="row" fxLayout="column" fxLayoutGap="30px">
+      <div class="portal-title-container" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+        fxFlex.gt-md="70%" fxFlex="grow">
+        <div class="postal-title" fxFlex.gt-md="40%">
+          <ng-content select="app-postal-title"></ng-content>
+        </div>
+        <div class="postal-title" fxFlex.gt-md="60%">
+          <ng-content select="app-postal-title-note"></ng-content>
+        </div>
       </div>
-      <div class="postal-title" fxFlex.gt-md="60%">
-        <ng-content select="app-postal-title-note"></ng-content>
+
+      <div class="postal-options-container" fxFlex.gt-md="30%">
+        <ng-content select="app-postal-options"></ng-content>
       </div>
     </div>
 
-    <div class="postal-options-container" fxFlex.gt-md="30%">
-      <ng-content select="app-postal-options"></ng-content>
+    <div class="postal-content-container">
+      <ng-content select="app-postal-content"></ng-content>
     </div>
-  </div>
-
-  <div class="postal-content-container">
-    <ng-content select="app-postal-content"></ng-content>
   </div>
 </div>

@@ -11,11 +11,36 @@
     padding: 20px;
     background: #fff;
     position: relative;
+    height: 100vh;
+    overflow-y: auto;
 
-    .back-home-button {
+    .header-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.postal-content-container {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+
+.side-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  nav {
+    ul {
+      padding: 0;
+      list-style: none;
+      li{
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }

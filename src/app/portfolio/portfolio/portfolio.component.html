@@ -1,15 +1,9 @@
 <app-postal-layout>
-  <app-postal-title>Work</app-postal-title>
-  <app-postal-title-note>An exquisite selection of my work according to my criteria</app-postal-title-note>
-  <app-postal-options>
-    <app-tag-selection [tags]="['Branding', 'Objects', 'Screen', 'Academic', 'Prints']" (change)="changeTags($event)"></app-tag-selection>
-
-  </app-postal-options>
   <app-postal-content>
     <div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container">
       <div *ngFor="let item of portfolioItems" class="portfolio-item" (click)="openGalleryDialog(item)">
         <div class="portfolio-thumbnail-container">
-          <img [src]="item.thumbnailUrl" [alt]="item.projectName">
+          <img [src]="item.thumbnail?.url" [alt]="item.projectName">
         </div>
         <div class="portfolio-item-additional-info">
           <div class="portfolio-item-name">
