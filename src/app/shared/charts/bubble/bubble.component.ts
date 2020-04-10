@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import * as d3 from 'd3';
 import { HierarchyNode, PackLayout, HierarchyCircularNode, stratify } from 'd3';
-import { leave } from '@angular/core/src/profile/wtf_impl';
 
 @Component({
   selector: 'app-bubble',

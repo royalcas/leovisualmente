@@ -9,7 +9,6 @@
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
-
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -21,8 +20,7 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              ".htaccess"
+              "src/assets"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -37,10 +35,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -138,5 +138,8 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

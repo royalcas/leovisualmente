@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PortfolioService } from './services/portfolio.service';
 import { Observable, Subject } from 'rxjs';
 import { IProject } from './models/portfolio';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-portfolio',
