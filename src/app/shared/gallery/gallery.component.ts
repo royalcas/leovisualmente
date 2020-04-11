@@ -20,7 +20,7 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {}
 
   goToImage(index: number) {
-    this.active = Math.min(Math.max(index, 0), this.images.length);
+    this.active = Math.min(Math.max(index, 0), this.images.length -1);
   }
 
   @HostListener('window:keyup', ['$event'])
