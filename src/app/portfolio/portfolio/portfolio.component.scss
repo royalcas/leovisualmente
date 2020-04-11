@@ -1,14 +1,17 @@
 .portfolio-container {
   display: flex;
   max-width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
+  overflow-x: auto;
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
 
   .portfolio-item {
     position: relative;
     overflow: hidden;
-    width: 200px;
-    height: 300px;
+    height: 500px;
+    width: 300px;
     cursor: pointer;
     margin-right: 10px;
     box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
@@ -18,8 +21,8 @@
     flex: 0 0 auto;
 
     img {
-      height: 300px;
-      width: 200px;
+      height: 500px;
+      width: 300px;
       object-fit: cover;
       object-position: center;
     }

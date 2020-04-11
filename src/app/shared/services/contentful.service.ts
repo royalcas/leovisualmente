@@ -59,6 +59,6 @@ export class ContentfulService {
   }
 
   getThumbnailUrl(originalUrl: string): string {
-    return `${originalUrl}?h=300&w=200&fit=thumb`;
+    return `${originalUrl}?h=500&w=300&fit=thumb`;
   }
 }

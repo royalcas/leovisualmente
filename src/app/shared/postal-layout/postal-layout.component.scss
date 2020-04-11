@@ -15,6 +15,8 @@
     position: relative;
     height: 100vh;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 
     .header-container {
       display: flex;
@@ -27,6 +29,11 @@
 .postal-content-container {
   overflow-x: hidden;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 
