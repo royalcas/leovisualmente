@@ -15,6 +15,12 @@ export class PortfolioService {
     return this.contentful.getProjects();
   }
 
+  getRandomProjects(quantity: number) {
+    return this.getProjects().pipe(
+      map(projects =>  projects.sort(() => Math.random() - 0.5).slice(0, quantity))
+    );
+  }
+
   getProjectsByCategory(categoryId: string): Observable<IProject[]> {
     return this.getProjects().pipe(
       map((projects) => projects.filter(project => project.category === categoryId)),

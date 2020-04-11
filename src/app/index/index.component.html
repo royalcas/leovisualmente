@@ -1,3 +1,29 @@
-<div class="intro-container">
-  <video id="mixingCards" src="./assets/intro/mixing-cards.mp4" autoplay loop [routerLink]="['/my-work']" ></video>
+
+<div class="index-wrapper">
+  <div class="intro-container" [class.active]="!showCards">
+    <div class="shuffle-container">
+      <video id="mixingCards" src="./assets/intro/mixing-cards.mp4" autoplay loop [routerLink]="['/my-work']" ></video>
+    </div>
+    <div class="action-container">
+      <button class="btn-primary" (click)="getCards()">Give me Cards!</button>
+    </div>
+  </div>
+  <div class="intro-container" [class.active]="showCards">
+    <div class="random-cards-container" fxLayout="row" fxLayoutGap="20px">
+      <div class="project-card" *ngFor="let project of (cards$ | async)" [routerLink]="['/my-work', project.category, project.id]">
+        <div class="project-card-thumb">
+          <img [src]="project.thumbnail?.url" [alt]="project.thumbnail?.title">
+        </div>
+        <div class="project-card-name">
+          <h3>{{project.projectName}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="hand-container">
+    </div>
+    <div class="card-actions">
+      <button class="btn-primary" (click)="getCards()">another cards</button>
+      <button class="btn-primary" (click)="goToSite()">go to site</button>
+    </div>
+  </div>
 </div>
