@@ -12,7 +12,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'leovisualmente';
 
-  constructor(private contentful: ContentfulService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -31,6 +31,5 @@ export class AppComponent implements OnInit {
     this.matIconRegistry.addSvgIcon('spades-off', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/icons/SpadesOff.svg'));
     this.matIconRegistry.addSvgIcon('spades-on', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/icons/SpadesOn.svg'));
     this.matIconRegistry.addSvgIcon('vi', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/icons/Vi.svg'));
-    this.contentful.getProjects().pipe(tap(console.log)).subscribe();
   }
 }

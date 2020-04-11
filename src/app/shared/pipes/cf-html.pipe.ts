@@ -1,12 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { SafeHtml, DomSanitizer } from '@angular/platform-browser';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 @Pipe({
   name: 'cfHtml'
 })
 export class CfHtmlPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  constructor(private domSanitizer: DomSanitizer) {}
+
+  transform(value: any): SafeHtml {
+    const htmlString = documentToHtmlString(value);
+    return this.domSanitizer.bypassSecurityTrustHtml(htmlString);
   }
 
 }

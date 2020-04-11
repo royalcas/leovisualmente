@@ -1,4 +1,4 @@
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, tap } from 'rxjs/operators';
 import { IProject, ProjectImage } from './../../portfolio/portfolio/models/portfolio';
 import { Injectable } from '@angular/core';
 import { createClient } from 'contentful';
@@ -40,6 +40,7 @@ export class ContentfulService {
       projectName: item.fields.name,
       images: item.fields.images.filter(image => image).map(this.mapImage),
       thumbnail: item.fields.thumbnail && this.mapImage(item.fields.thumbnail),
+      category: item.fields.category && item.fields.category.fields.name.toLocaleLowerCase()
     };
 
     return project;

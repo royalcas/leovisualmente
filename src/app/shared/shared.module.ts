@@ -16,9 +16,11 @@ import { LoadingComponent } from './loading/loading.component';
 import { MaterialModule } from './material.module';
 import { BubbleComponent } from './charts/bubble/bubble.component';
 import { SocialLinksComponent } from './postal-layout/social-links/social-links.component';
+import { CfHtmlPipe } from './pipes/cf-html.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule],
+  imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule, RouterModule],
   declarations: [
     MainLayoutComponent,
     PostalLayoutComponent,
@@ -31,7 +33,8 @@ import { SocialLinksComponent } from './postal-layout/social-links/social-links.
     LoadingComponent,
     DialogGalleryComponent,
     GalleryComponent,
-    SocialLinksComponent
+    SocialLinksComponent,
+    CfHtmlPipe
   ],
   exports: [
     MainLayoutComponent,
@@ -47,8 +50,10 @@ import { SocialLinksComponent } from './postal-layout/social-links/social-links.
     DialogGalleryComponent,
     GalleryComponent,
     ChartsModule,
-    SocialLinksComponent
+    SocialLinksComponent,
+    CfHtmlPipe
   ],
-  entryComponents: [DialogGalleryComponent]
+  entryComponents: [DialogGalleryComponent],
+  providers: [CfHtmlPipe]
 })
 export class SharedModule {}

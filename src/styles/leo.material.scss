@@ -50,3 +50,8 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
     right: 10px;
   }
 }
+
+
+.mat-dialog-content {
+  max-height: initial !important;
+}

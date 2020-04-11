@@ -22,6 +22,10 @@ const appRoutes: Routes = [
     path: 'funny-facts',
     loadChildren: './funny-facts/funny-facts.module#FunnyFactsModule'
   },
+  {
+    path: 'duck',
+    loadChildren: './personal-introduction/personal-introduction.module#PersonalIntroductionModule'
+  },
   { path: 'posters', loadChildren: () => PostersModule },
   { path: '**', component: PageNotFoundComponent }
 ];

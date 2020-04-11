@@ -1,6 +1,6 @@
 <div *ngFor="let image of images; index as i" class="slide-container" [class.active]="i === active" [class.left]="i < active"
   [class.right]="i > active">
-  <img class="slide-image" [src]="image" alt="">
+  <img class="slide-image" [src]="image.url" [alt]="image.title">
 </div>
 <div class="dots-container">
   <a *ngFor="let image of images; index as i" class="dot-slide" [class.active]="i===active" (click)="goToImage(i)"></a>

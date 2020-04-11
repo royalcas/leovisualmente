@@ -1,0 +1,13 @@
+
+<div class="project-details-container" *ngIf="project$ | async as project">
+  <app-gallery class="back-gallery" [images]="project.images"></app-gallery>
+    <div class="project-details-actions">
+      <button mat-icon-button class="close-button" aria-label="Example icon-button with a heart icon">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  <div class="gallery-information">
+    <h2>{{project.projectName}}</h2>
+    <div class="project-description" [innerHTML]="project.description"></div>
+  </div>
+</div>

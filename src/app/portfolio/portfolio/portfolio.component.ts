@@ -4,6 +4,8 @@ import { PortfolioService } from './services/portfolio.service';
 import { Observable, Subject } from 'rxjs';
 import { IProject } from './models/portfolio';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,30 +15,21 @@ import { MatDialog } from '@angular/material/dialog';
 export class PortfolioComponent implements OnInit {
   portfolioItems: IProject[];
   tags$ = new Subject<string[]>();
+  portfolioItems$: Observable<unknown>;
 
   constructor(
     private portfolioService: PortfolioService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.portfolioService.getProjects().subscribe(items => {
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>{
+        return this.portfolioService.getProjectsByCategory(params.get('categoryId'));
+    })).subscribe(items => {
       this.portfolioItems = items;
     });
   }
 
-  changeTags(tags: string[]) {
-    this.portfolioService.filterPortfolio(tags).subscribe(items => {
-      this.portfolioItems = items;
-    });
-  }
-
-  openGalleryDialog(item: IProject) {
-    const dialogData = this.portfolioService.getItemGalleryInfo(item);
-    this.dialog.open(DialogGalleryComponent, {
-      width: '100vw',
-      height: '100vh',
-      data: dialogData
-    });
-  }
 }

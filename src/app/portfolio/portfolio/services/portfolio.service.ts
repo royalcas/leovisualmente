@@ -1,8 +1,8 @@
+import { IProject } from './../models/portfolio';
 import { ContentfulService } from './../../../shared/services/contentful.service';
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { map, mergeMap } from "rxjs/operators";
-import { IProject } from "../models/portfolio";
 import { IDialogGalleryModel } from "../../../shared/dialog-gallery/idialog-gallery.model";
 
 @Injectable({
@@ -12,22 +12,18 @@ export class PortfolioService {
   constructor(private contentful: ContentfulService) {}
 
   getProjects(): Observable<IProject[]> {
-    return this.contentful.getProjects().pipe(
-      map((data: IProject[]) => data.sort((a, b) => b.id - a.id))
+    return this.contentful.getProjects();
+  }
+
+  getProjectsByCategory(categoryId: string): Observable<IProject[]> {
+    return this.getProjects().pipe(
+      map((projects) => projects.filter(project => project.category === categoryId)),
     );
   }
 
-  filterPortfolio(selectedTags: string[]): Observable<IProject[]> {
+  getProjectById(id: string): Observable<IProject> {
     return this.getProjects().pipe(
-      map(data =>
-        data.filter(item => {
-          if (!selectedTags || selectedTags.length === 0) {
-            return data;
-          }
-
-          return item.tags.some(tag => selectedTags.includes(tag));
-        })
-      )
+      map((projects) => projects.find(project => project.id === id)),
     );
   }
 

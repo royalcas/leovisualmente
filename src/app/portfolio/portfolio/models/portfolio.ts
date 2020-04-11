@@ -1,3 +1,4 @@
+import { SafeHtml } from '@angular/platform-browser';
 export interface ProjectImage {
   url: string;
   title: string;
@@ -6,10 +7,11 @@ export interface ProjectImage {
 
 
 export interface IProject {
-  id: number;
+  id: string;
   thumbnail: ProjectImage;
+  category?: string;
   images: ProjectImage[];
   tags?: string[];
   projectName: string;
-  description: string;
+  description: string | SafeHtml;
 }

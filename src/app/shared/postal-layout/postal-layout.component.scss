@@ -1,3 +1,5 @@
+@import 'palette';
+
 :host {
   display: flex;
   min-height: 100vh;
@@ -33,14 +35,30 @@
   align-items: center;
   justify-content: center;
 
-  nav {
+  nav.main-menu {
     ul {
       padding: 0;
       list-style: none;
       li{
         margin: 0;
         padding: 0;
+
+        button {
+          color:$linkColor;
+          padding: 10px 20px;
+          &.active {
+            color:$linkActiveColor;
+          }
+        }
       }
     }
+  }
+}
+
+.app-container {
+  width: 100%;
+
+  .postal-container {
+    flex-grow: 1;
   }
 }
