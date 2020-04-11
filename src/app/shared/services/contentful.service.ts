@@ -26,7 +26,8 @@ export class ContentfulService {
       })
     ).pipe(
       map(posts => this.cdaClient.parseEntries(posts.items)),
-      map((posts: any) => posts.map(this.mapProject.bind(this))));
+      map((posts: any) => posts.map((project: any) => this.mapProject(project)))
+    );
   }
   getPost(id: string): any {
     return from(this.cdaClient.getEntry(id));
@@ -38,8 +39,8 @@ export class ContentfulService {
       description: item.fields.description,
       id: item.fields.url,
       projectName: item.fields.name,
-      images: item.fields.images.filter(image => image).map(this.mapImage),
-      thumbnail: item.fields.thumbnail && this.mapImage(item.fields.thumbnail),
+      images: item.fields.images.filter(image => image).map((image) => this.mapImage(image)),
+      thumbnail: item.fields.thumbnail && this.mapImage(item.fields.thumbnail, true),
       category: item.fields.category && item.fields.category.fields.name.toLocaleLowerCase()
     };
 
@@ -47,13 +48,17 @@ export class ContentfulService {
   }
 
 
-  mapImage(imageData: any): ProjectImage {
+  mapImage(imageData: any, isThumb: boolean = false): ProjectImage {
     const image: ProjectImage =  {
-      url: imageData.fields.file.url,
+      url: isThumb ? this.getThumbnailUrl(imageData.fields.file.url) : imageData.fields.file.url,
       description: imageData.fields.description,
       title: imageData.fields.title,
     };
 
     return image;
+  }
+
+  getThumbnailUrl(originalUrl: string): string {
+    return `${originalUrl}?h=300&w=200&fit=thumb`;
   }
 }
