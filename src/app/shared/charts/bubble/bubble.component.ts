@@ -24,8 +24,8 @@ export class BubbleComponent implements OnInit, AfterViewInit {
   bubbles: IBubbleItem[];
 
   public width = 930;
-  public height = 930;
-  private colors = ['#0E3D5E', '#287EBB', '#000000'];
+  public height = 430;
+  private colors = ['#EF7A06', '#B7B7B7', '#000000'];
 
   public data: PackLayout<IBubbleItem>[];
 
