@@ -26,6 +26,7 @@ export class PortfolioService {
 
   getRandomProjects(quantity: number) {
     return this.getProjects().pipe(
+      map((projects) => projects.filter(project => project.category !== 'posters')),
       map(projects =>  projects.sort(() => Math.random() - 0.5).slice(0, quantity))
     );
   }
