@@ -1,6 +1,7 @@
 @import 'palette';
 
 .btn-primary {
+  margin-right: 10px;
   &:hover {
     background-color: rgba(0,0,0,.5);
   }
@@ -102,7 +103,11 @@
   }
 }
 
-
+.visits-text {
+  font-family: "Cedarville Cursive", cursive;
+  color: white;
+  text-align: center;
+}
 .random-cards-container {
   display: flex;
   flex-direction: row;
