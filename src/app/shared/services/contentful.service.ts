@@ -26,7 +26,6 @@ export class ContentfulService {
       })
     ).pipe(
       map(posts => this.cdaClient.parseEntries(posts.items)),
-      tap(console.log),
       map((posts: any) => posts.map((project: any) => this.mapProject(project)))
     );
   }

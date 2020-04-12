@@ -13,7 +13,6 @@ export class PosterDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: ProjectImage) { }
 
   ngOnInit(): void {
-    console.log(this.data);
   }
 
 }
