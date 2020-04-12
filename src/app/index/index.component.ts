@@ -1,5 +1,5 @@
 import { mergeMap } from 'rxjs/operators';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, timer } from 'rxjs';
 import { PortfolioService } from './../portfolio/portfolio/services/portfolio.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,6 +18,7 @@ export class IndexComponent implements OnInit {
   showCards = false;
   visits: number;
   requestCards$ = new BehaviorSubject<{}>(null);
+  gettingCards = false;
 
   constructor(private router: Router, private service: PortfolioService, private visitCounter: VisitCounterService) {
     this.visitCounter.increaseNumberOfVisits();
@@ -37,11 +38,14 @@ export class IndexComponent implements OnInit {
   }
 
   getCards() {
+    this.gettingCards = true;
     this.showCards = true;
   }
 
   getMoreCards() {
+    this.showCards = false;
     this.requestCards$.next(true);
+    timer(1000).subscribe(() => this.showCards = true);
   }
 
 }

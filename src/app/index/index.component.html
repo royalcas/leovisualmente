@@ -4,22 +4,25 @@
     <div class="shuffle-container">
       <video id="mixingCards" src="./assets/intro/mixing-cards.mp4" autoplay loop></video>
     </div>
-    <div class="visits-text">
-      <p *ngIf="visits <= 1">
-        Hello there
-        Welcome to the studio
-        Wanna see something cool?
-      </p>
-      <p *ngIf="visits === 2">
-        Oh, Hi!
-        I see you here before
-        as it´s your second visit, let me introduce you to a special gallery
-      </p>
-    </div>
-    <div class="action-container">
-      <button *ngIf="visits > 1" class="btn-primary" (click)="goToPosters()">go to special gallery!</button>
-      <button class="btn-primary" (click)="getCards()">give me Cards!</button>
-    </div>
+    <ng-container *ngIf="!gettingCards">
+      <div class="visits-text">
+        <p *ngIf="visits <= 1">
+          Hello there
+          Welcome to the studio
+          Wanna see something cool?
+        </p>
+        <p *ngIf="visits === 2">
+          Oh, Hi!
+          I see you here before
+          as it´s your second visit, let me introduce you to a special gallery
+        </p>
+      </div>
+      <div class="action-container">
+        <button *ngIf="visits > 1" class="btn-primary" (click)="goToPosters()">go to special gallery!</button>
+        <button class="btn-primary" (click)="getCards()">give me Cards!</button>
+      </div>
+    </ng-container>
+
   </div>
   <div class="intro-container" [class.active]="showCards">
     <div class="random-cards-container" fxLayout="row" fxLayoutGap="20px">
