@@ -8,6 +8,7 @@ import { PanoComponent } from './pano/pano.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageLineComponent } from './index/message-line/message-line.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     IndexComponent,
     PanoComponent,
     PageNotFoundComponent,
+    MessageLineComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
   providers: [],
