@@ -1,4 +1,10 @@
+import { PosterDialogComponent } from './../poster-dialog/poster-dialog.component';
+import { ProjectImage } from './../../portfolio/portfolio/models/portfolio';
+import { PostersService } from './../posters.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IProject } from 'src/app/portfolio/portfolio/models/portfolio';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-posters',
@@ -7,9 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostersComponent implements OnInit {
 
-  constructor() { }
+  showMenu = false;
+  posterProject$: Observable<IProject>;
+
+  constructor(private postersService: PostersService, public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.posterProject$ = this.postersService.getPosters();
   }
 
+  openPoster(poster: ProjectImage) {
+    const dialogRef = this.dialog.open(PosterDialogComponent, {
+      panelClass: 'poster-dialog-panel',
+      data: poster
+    });
+  }
 }

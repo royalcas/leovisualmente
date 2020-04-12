@@ -1,0 +1,9 @@
+<button mat-icon-button [mat-dialog-close] class="close-top-button"><mat-icon>close</mat-icon></button>
+<div mat-dialog-content>
+
+  <div class="poster-image-container">
+    <img [src]="data.url" [alt]="data.title">
+  </div>
+  <h3>{{data.title}}</h3>
+  <p>{{data.description}}</p>
+</div>

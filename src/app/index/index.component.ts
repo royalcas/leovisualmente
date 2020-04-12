@@ -33,7 +33,7 @@ export class IndexComponent implements OnInit {
   }
 
   goToPosters() {
-    this.router.navigate(['/my-work', 'posters', 'Posters']);
+    this.router.navigate(['/posters']);
   }
 
   getCards() {

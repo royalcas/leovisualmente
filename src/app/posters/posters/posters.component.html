@@ -1,3 +1,14 @@
-<p>
-  posters works!
-</p>
+<app-postal-layout [showMenu]="showMenu">
+  <app-postal-content>
+    <div *ngIf="(posterProject$ | async) as poster; else loadingTemplate" class="posters-container">
+      <div *ngFor="let item of poster?.images" class="poster-card" (click)="openPoster(item)">
+        <div class="poster-thumbnail-container">
+          <img [src]="item.url" [alt]="item.title">
+        </div>
+      </div>
+    </div>
+    <ng-template #loadingTemplate>
+      <app-loading></app-loading>
+    </ng-template>
+  </app-postal-content>
+</app-postal-layout>

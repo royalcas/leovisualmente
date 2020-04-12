@@ -41,8 +41,10 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
   font-feature-settings: 'liga';
 }
 
-.mat-dialog-container {
+.cdk-overlay-pane .mat-dialog-container {
   position: relative;
+  border-radius: 0px;
+  border: 1px solid $main-color;
 
   .close-top-button {
     position: absolute;
