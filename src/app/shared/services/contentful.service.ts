@@ -26,6 +26,7 @@ export class ContentfulService {
       })
     ).pipe(
       map(posts => this.cdaClient.parseEntries(posts.items)),
+      tap(console.log),
       map((posts: any) => posts.map((project: any) => this.mapProject(project)))
     );
   }
@@ -49,13 +50,19 @@ export class ContentfulService {
 
 
   mapImage(imageData: any, isThumb: boolean = false): ProjectImage {
+
     const image: ProjectImage =  {
-      url: isThumb ? this.getThumbnailUrl(imageData.fields.file.url) : imageData.fields.file.url,
+      url: isThumb ? this.getThumbnailUrl(imageData.fields.file.url) : this.getGalleryImgUrl(imageData.fields.file.url),
       description: imageData.fields.description,
       title: imageData.fields.title,
     };
 
     return image;
+  }
+
+  getGalleryImgUrl(imageUrl: string): string {
+    const height = window.screen.height;
+    return `${imageUrl}?h=${height}`;
   }
 
   getThumbnailUrl(originalUrl: string): string {

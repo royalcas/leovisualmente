@@ -57,3 +57,7 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 .mat-dialog-content {
   max-height: initial !important;
 }
+
+.mat-icon-button {
+  color: $icon-default-color;
+}
