@@ -1,4 +1,4 @@
-import { ProjectImage } from './../../portfolio/portfolio/models/portfolio';
+import { ProjectImage, ContentType } from './../../portfolio/portfolio/models/portfolio';
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 
 export enum KEY_CODE {
@@ -15,6 +15,8 @@ export class GalleryComponent implements OnInit {
   @Input()
   images: ProjectImage[];
   active = 0;
+  contentTypes = ContentType;
+
   constructor() {}
 
   ngOnInit() {}

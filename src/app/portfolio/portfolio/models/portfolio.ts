@@ -1,8 +1,16 @@
 import { SafeHtml } from '@angular/platform-browser';
+
+export enum ContentType {
+  jpeg = 'image/jpeg',
+  png = 'image/png',
+  mp4 = 'video/mp4',
+}
+
 export interface ProjectImage {
   url: string;
   title: string;
   description: string;
+  contentType: ContentType;
 }
 
 

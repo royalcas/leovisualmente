@@ -50,11 +50,11 @@ export class ContentfulService {
 
 
   mapImage(imageData: any, isThumb: boolean = false): ProjectImage {
-
     const image: ProjectImage =  {
       url: isThumb ? this.getThumbnailUrl(imageData.fields.file.url) : this.getGalleryImgUrl(imageData.fields.file.url),
       description: imageData.fields.description,
       title: imageData.fields.title,
+      contentType: imageData.fields.file.contentType
     };
 
     return image;
