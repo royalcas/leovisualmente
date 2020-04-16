@@ -11,8 +11,8 @@
     </div>
 
       <div class="action-container" *ngIf="!gettingCards">
-        <button *ngIf="visits > 1" class="btn-primary" (click)="goToPosters()">go to special gallery!</button>
-        <button class="btn-primary" (click)="getCards()">give me Cards!</button>
+        <button *ngIf="visits % 2 === 0" class="btn-primary" (click)="goToPosters()">go to special gallery!</button>
+        <button class="btn-primary" (click)="getCards()">give me cards!</button>
       </div>
 
   </div>

@@ -42,9 +42,9 @@
     justify-content: center;
 
     .dot-slide {
-      width: 20px;
-      height: 20px;
-      background: $primary-color;
+      width: 16px;
+      height: 16px;
+      background: url(/assets/icons/gallery_off.png) no-repeat center center;
       margin: 5px;
       display: flex;
       align-items: center;
@@ -52,12 +52,8 @@
       cursor: pointer;
 
       &.active {
-        background: white;
-
+        background: url(/assets/icons/gallery_on.png) no-repeat center center;
       }
-
     }
-
-
   }
 }

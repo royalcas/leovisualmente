@@ -15,7 +15,7 @@ export class MessageLineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.displayedParagraphs$ = interval(1200).pipe(
+    this.displayedParagraphs$ = timer(1000, 3000).pipe(
       take(this.paragraphs.length),
       map((numberOfParragraphsToDisplay: number) => this.paragraphs.slice(numberOfParragraphsToDisplay, numberOfParragraphsToDisplay + 1))
     );
