@@ -1,5 +1,5 @@
 import { ProjectImage, ContentType } from './../../portfolio/portfolio/models/portfolio';
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, EventEmitter, Output } from '@angular/core';
 
 export enum KEY_CODE {
   RIGHT_ARROW = 39,
@@ -12,6 +12,8 @@ export enum KEY_CODE {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+  @Output()
+  selected = new EventEmitter<ProjectImage>();
   @Input()
   images: ProjectImage[];
   active = 0;
@@ -19,10 +21,13 @@ export class GalleryComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.selected.emit(this.images[this.active]);
+  }
 
   goToImage(index: number) {
-    this.active = Math.min(Math.max(index, 0), this.images.length -1);
+    this.active = Math.min(Math.max(index, 0), this.images.length - 1);
+    this.selected.emit(this.images[this.active]);
   }
 
   @HostListener('window:keyup', ['$event'])

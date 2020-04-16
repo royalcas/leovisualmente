@@ -1,3 +1,5 @@
+import { SafeHtml } from '@angular/platform-browser';
+import { ProjectImage } from './../portfolio/models/portfolio';
 import { CfHtmlPipe } from './../../shared/pipes/cf-html.pipe';
 import { PortfolioService } from './../portfolio/services/portfolio.service';
 import { switchMap, map } from 'rxjs/operators';
@@ -13,6 +15,8 @@ import { IProject } from '../portfolio/models/portfolio';
 })
 export class ProjectDetailsComponent implements OnInit {
   project$: Observable<IProject>;
+  title: string;
+  description: SafeHtml;
 
   constructor(private route: ActivatedRoute, private service: PortfolioService, private htmlParser: CfHtmlPipe) { }
 
@@ -25,6 +29,11 @@ export class ProjectDetailsComponent implements OnInit {
         return {...project, description: this.htmlParser.transform(project.description)};
       })
     );
+  }
+
+  setGalleryInformation(image: ProjectImage) {
+    this.title = image.title;
+    this.description = image.description;
   }
 
 }
