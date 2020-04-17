@@ -2,7 +2,7 @@ import { SafeHtml } from '@angular/platform-browser';
 import { ProjectImage } from './../portfolio/models/portfolio';
 import { CfHtmlPipe } from './../../shared/pipes/cf-html.pipe';
 import { PortfolioService } from './../portfolio/services/portfolio.service';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,6 +17,8 @@ export class ProjectDetailsComponent implements OnInit {
   project$: Observable<IProject>;
   title: string;
   description: SafeHtml;
+  selectedProject: IProject;
+  technicalSpeficication: string | SafeHtml;
 
   constructor(private route: ActivatedRoute, private service: PortfolioService, private htmlParser: CfHtmlPipe) { }
 
@@ -26,14 +28,27 @@ export class ProjectDetailsComponent implements OnInit {
         return this.service.getProjectById(paramMap.get('id'));
       }),
       map((project) => {
-        return {...project, description: this.htmlParser.transform(project.description)};
+        return {
+          ...project,
+          description: this.htmlParser.transform(project.description),
+        };
+      }),
+      tap((project) => {
+        this.selectedProject = project;
       })
     );
   }
 
-  setGalleryInformation(image: ProjectImage) {
+  setGalleryInformation({index, image}: {index: number, image: ProjectImage}) {
+    if (index === 0 ) {
+      this.title = this.selectedProject.projectName;
+      this.description = this.selectedProject.description;
+      this.technicalSpeficication = this.selectedProject.technicalSpecifications;
+      return;
+    }
     this.title = image.title;
     this.description = image.description;
+    this.technicalSpeficication = null;
   }
 
 }

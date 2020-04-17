@@ -35,8 +35,10 @@ export class ContentfulService {
 
 
   mapProject(item: any): IProject {
+    console.log(item);
     const project: IProject = {
       description: item.fields.description,
+      technicalSpecifications: item.fields.technicalSpecifications,
       id: item.fields.url,
       projectName: item.fields.name,
       images: item.fields.images.filter(image => image).map((image) => this.mapImage(image)),

@@ -13,7 +13,7 @@ export enum KEY_CODE {
 })
 export class GalleryComponent implements OnInit {
   @Output()
-  selected = new EventEmitter<ProjectImage>();
+  selected = new EventEmitter<{index: number, image: ProjectImage}>();
   @Input()
   images: ProjectImage[];
   active = 0;
@@ -22,12 +22,16 @@ export class GalleryComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.selected.emit(this.images[this.active]);
+    this.emitSelectedImage();
+  }
+
+  emitSelectedImage() {
+    this.selected.emit({index: this.active, image: this.images[this.active]});
   }
 
   goToImage(index: number) {
     this.active = Math.min(Math.max(index, 0), this.images.length - 1);
-    this.selected.emit(this.images[this.active]);
+    this.emitSelectedImage();
   }
 
   @HostListener('window:keyup', ['$event'])

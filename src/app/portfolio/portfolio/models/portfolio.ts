@@ -22,4 +22,5 @@ export interface IProject {
   tags?: string[];
   projectName: string;
   description: string | SafeHtml;
+  technicalSpecifications: string | SafeHtml;
 }
