@@ -14,4 +14,9 @@ export class CfHtmlPipe implements PipeTransform {
     return this.domSanitizer.bypassSecurityTrustHtml(htmlString);
   }
 
+  transformLongText(value: string): SafeHtml {
+    const htmlString = value.replace(new RegExp('\n', 'g'), '<br />');
+    return this.domSanitizer.bypassSecurityTrustHtml(htmlString);
+  }
+
 }

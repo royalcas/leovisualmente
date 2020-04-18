@@ -31,6 +31,7 @@ export class ProjectDetailsComponent implements OnInit {
         return {
           ...project,
           description: this.htmlParser.transform(project.description),
+          technicalSpecifications: this.htmlParser.transformLongText(project.technicalSpecifications as string )
         };
       }),
       tap((project) => {
