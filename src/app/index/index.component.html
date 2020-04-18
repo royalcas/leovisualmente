@@ -4,8 +4,10 @@
 
     <div class="shuffle-container">
       <ng-container *ngIf="!gettingCards">
-        <app-message-line *ngIf="visits <= 1" class="visits-text" [paragraphs]="['Hello there', 'Welcome to the studio','Wanna see something cool?']"></app-message-line>
-        <app-message-line *ngIf="visits === 2" class="visits-text" [paragraphs]="['Oh, Hi!', 'I see you here before','as it´s your second visit, let me introduce you to a special gallery']"></app-message-line>
+        <app-message-line *ngIf="visits % 2 === 1; else alternativeDialogTmpl" class="visits-text" [paragraphs]="['Hello there', 'Welcome to the studio','Wanna see something cool?']"></app-message-line>
+        <ng-template #alternativeDialogTmpl>
+          <app-message-line class="visits-text" [paragraphs]="['Oh, Hi!', 'I see you here before','as it´s your second visit, let me introduce you to a special gallery']"></app-message-line>
+        </ng-template>
       </ng-container>
       <video #shuffleCardsVideo id="mixingCards" src="./assets/intro/mixing-cards.mp4" loop muted="muted" (loadeddata)="playVideo()"></video>
     </div>
