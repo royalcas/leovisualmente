@@ -9,7 +9,7 @@
 
 .intro-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,9 @@
   height: 100vh;
   transition: opacity .5s ease-in-out;
   opacity: 0;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 
   .hand-container {
     background-color:$intro-background;
@@ -97,15 +99,15 @@
       overflow: hidden;
       width: 200px;
       height: 300px;
+      max-width: 100%;
       margin-bottom: 20px;
       border-radius: 16px;
 
       img {
         width: 200px;
-        height: 300px;
         object-fit: cover;
         object-position: center;
-        height: 100%;
+        max-width: 100%;
       }
     }
 
@@ -135,19 +137,17 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   background: $intro-background;
 
-
   .intro-container.active {
     opacity: 1 !important;
-    order: -1;
-
+    z-index: 3;
     .hand-container {
       left: 100%;
     }
   }
-
 }
 
 .project-card:last-child {
@@ -162,6 +162,8 @@
 
 .card-actions {
   padding: 20px;
+  padding-bottom: 100px;
+  flex-grow: 1;
   .btn-primary {
     color: white;
     border-color: white;
