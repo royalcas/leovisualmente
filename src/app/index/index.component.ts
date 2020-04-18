@@ -44,6 +44,7 @@ export class IndexComponent implements OnInit {
   }
 
   playVideo() {
+    this.videoComponent.nativeElement.muted = true;
     this.videoComponent.nativeElement.play();
   }
 

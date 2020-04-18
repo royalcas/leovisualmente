@@ -9,7 +9,9 @@
           <app-message-line class="visits-text" [paragraphs]="['Oh, Hi!', 'I see you here before','as it´s your second visit, let me introduce you to a special gallery']"></app-message-line>
         </ng-template>
       </ng-container>
-      <video #shuffleCardsVideo id="mixingCards" src="./assets/intro/mixing-cards.mp4" loop muted="muted" (loadeddata)="playVideo()"></video>
+      <video #shuffleCardsVideo id="mixingCards" loop muted autoplay (loadeddata)="playVideo()">
+        <source src="./assets/intro/mixing-cards.mp4" type="video/mp4">
+      </video>
     </div>
 
       <div class="action-container" *ngIf="!gettingCards">
