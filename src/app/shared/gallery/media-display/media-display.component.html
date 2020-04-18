@@ -1,0 +1,4 @@
+<img *ngIf="image.contentType !== contentTypes.mp4; else videoTemplate" class="slide-image" [src]="image.url" [alt]="image.title" />
+<ng-template #videoTemplate>
+  <video #videoElement class="slide-image" [src]="image.url" loop> </video>
+</ng-template>

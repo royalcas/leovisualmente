@@ -1,3 +1,4 @@
+import { MediaDisplayComponent } from './gallery/media-display/media-display.component';
 import { ChartsModule } from './charts/charts.module';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DialogGalleryComponent } from './dialog-gallery/dialog-gallery.component';
@@ -33,6 +34,7 @@ import { RouterModule } from '@angular/router';
     LoadingComponent,
     DialogGalleryComponent,
     GalleryComponent,
+    MediaDisplayComponent,
     SocialLinksComponent,
     CfHtmlPipe
   ],
@@ -49,6 +51,7 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     DialogGalleryComponent,
     GalleryComponent,
+    MediaDisplayComponent,
     ChartsModule,
     SocialLinksComponent,
     CfHtmlPipe

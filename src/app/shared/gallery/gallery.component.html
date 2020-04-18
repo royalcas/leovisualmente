@@ -1,7 +1,6 @@
 <div *ngFor="let image of images; index as i" class="slide-container" [class.active]="i === active" [class.left]="i < active"
   [class.right]="i > active">
-  <img *ngIf="image.contentType !== contentTypes.mp4" class="slide-image" [src]="image.url" [alt]="image.title" />
-  <video *ngIf="image.contentType === contentTypes.mp4" class="slide-image" [src]="image.url" loop autoplay> </video>
+  <app-media-display class="slide-image" [image]="image" [active]="i === active"></app-media-display>
 </div>
 <div class="dots-container">
   <a *ngFor="let image of images; index as i" class="dot-slide" [class.active]="i===active" (click)="goToImage(i)"></a>
