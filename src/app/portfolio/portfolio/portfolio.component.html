@@ -1,19 +1,16 @@
-<app-postal-layout>
-  <app-postal-content>
-    <div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container">
-      <div *ngFor="let item of portfolioItems" class="portfolio-item" [routerLink]="['/my-work', 'spades', item.id]">
-        <div class="portfolio-thumbnail-container">
-          <img [src]="item.thumbnail?.url" [alt]="item.projectName">
-        </div>
-        <div class="portfolio-item-additional-info">
-          <div class="portfolio-item-name">
-            {{item.projectName}}
-          </div>
-        </div>
+
+<div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container">
+  <div *ngFor="let item of portfolioItems" class="portfolio-item" [routerLink]="['/my-work', 'spades', item.id]">
+    <div class="portfolio-thumbnail-container">
+      <img [src]="item.thumbnail?.url" [alt]="item.projectName">
+    </div>
+    <div class="portfolio-item-additional-info">
+      <div class="portfolio-item-name">
+        {{item.projectName}}
       </div>
     </div>
-    <ng-template #loadingTemplate>
-      <app-loading></app-loading>
-    </ng-template>
-  </app-postal-content>
-</app-postal-layout>
+  </div>
+</div>
+<ng-template #loadingTemplate>
+  <app-loading></app-loading>
+</ng-template>

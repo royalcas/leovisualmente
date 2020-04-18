@@ -19,6 +19,7 @@ import { BubbleComponent } from './charts/bubble/bubble.component';
 import { SocialLinksComponent } from './postal-layout/social-links/social-links.component';
 import { CfHtmlPipe } from './pipes/cf-html.pipe';
 import { RouterModule } from '@angular/router';
+import { PostalLayoutOutletComponent } from './postal-layout-outlet/postal-layout-outlet.component';
 
 @NgModule({
   imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule, RouterModule],
@@ -36,6 +37,7 @@ import { RouterModule } from '@angular/router';
     GalleryComponent,
     MediaDisplayComponent,
     SocialLinksComponent,
+    PostalLayoutOutletComponent,
     CfHtmlPipe
   ],
   exports: [
@@ -54,6 +56,7 @@ import { RouterModule } from '@angular/router';
     MediaDisplayComponent,
     ChartsModule,
     SocialLinksComponent,
+    PostalLayoutOutletComponent,
     CfHtmlPipe
   ],
   entryComponents: [DialogGalleryComponent],

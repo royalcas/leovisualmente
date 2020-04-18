@@ -1,3 +1,4 @@
+import { PostalLayoutOutletComponent } from './shared/postal-layout-outlet/postal-layout-outlet.component';
 import { ContactMeModule } from './contact-me/contact-me.module';
 import { PostersModule } from './posters/posters.module';
 import { FunnyFactsModule } from './funny-facts/funny-facts.module';
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'my-work',
-    loadChildren: './portfolio/portfolio.module#PortfolioModule'
+    loadChildren: './portfolio/portfolio.module#PortfolioModule',
+    component: PostalLayoutOutletComponent
   },
   {
     path: 'funny-facts',
