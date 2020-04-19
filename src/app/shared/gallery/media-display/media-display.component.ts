@@ -43,4 +43,8 @@ export class MediaDisplayComponent implements OnInit, OnChanges, AfterViewInit {
     }
   }
 
+  preventDrag(event: any) {
+    event.preventDefault();
+  }
+
 }

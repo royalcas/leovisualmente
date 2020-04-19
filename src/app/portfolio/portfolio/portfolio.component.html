@@ -1,6 +1,6 @@
 
-<div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container" (pandown)="console.warn($event)">
-  <div *ngFor="let item of portfolioItems" class="portfolio-item" [routerLink]="['/my-work', 'spades', item.id]">
+<div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container" (pandown)="goPreviousCategory($event)" (panup)="goNextCategory($event)">
+  <div *ngFor="let item of portfolioItems" class="portfolio-item" [routerLink]="['/my-work', item.category, item.id]">
     <div class="portfolio-thumbnail-container">
       <img [src]="item.thumbnail?.url" [alt]="item.projectName">
     </div>

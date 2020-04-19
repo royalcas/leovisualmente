@@ -1,4 +1,4 @@
-<div *ngFor="let image of images; index as i" class="slide-container" [class.active]="i === active" [class.left]="i < active"
+<div *ngFor="let image of images; index as i" class="slide-container" (swiperight)="goToImage(active - 1)" (swipeleft)="goToImage(active + 1)" [class.active]="i === active" [class.left]="i < active"
   [class.right]="i > active">
   <app-media-display class="slide-image" [image]="image" [active]="i === active"></app-media-display>
 </div>

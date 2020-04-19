@@ -29,4 +29,5 @@ export class PostalLayoutOutletComponent implements OnInit {
   prepareRoute(outlet: RouterOutlet) {
     return window.location.href.split('/').pop();
   }
+
 }
