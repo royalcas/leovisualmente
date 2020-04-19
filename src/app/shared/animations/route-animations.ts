@@ -51,7 +51,10 @@ const transitionDecrement = [
 
 export const slideInAnimation =
   trigger('routeAnimations', [
-    transition('spades => *', transitionIncrement),
+    transition('spades => diamonds', transitionIncrement),
+    transition('spades => clubs', transitionIncrement),
+    transition('spades => hearths', transitionIncrement),
+    transition('spades => duck', transitionIncrement),
     transition('diamonds => clubs', transitionIncrement),
     transition('diamonds => hearths', transitionIncrement),
     transition('diamonds => duck', transitionIncrement),
@@ -65,4 +68,7 @@ export const slideInAnimation =
     transition('clubs => diamonds', transitionDecrement),
     transition('clubs => spades', transitionDecrement),
     transition('diamonds => spades', transitionDecrement),
+    transition('clubs => spades', transitionDecrement),
+    transition('hearths => spades', transitionDecrement),
+    transition('duck => spades', transitionDecrement),
   ]);

@@ -1,5 +1,5 @@
 
-<div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container">
+<div *ngIf="portfolioItems; else loadingTemplate" class="portfolio-container" (pandown)="console.warn($event)">
   <div *ngFor="let item of portfolioItems" class="portfolio-item" [routerLink]="['/my-work', 'spades', item.id]">
     <div class="portfolio-thumbnail-container">
       <img [src]="item.thumbnail?.url" [alt]="item.projectName">

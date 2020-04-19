@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,7 +18,7 @@ import { MessageLineComponent } from './index/message-line/message-line.componen
     PageNotFoundComponent,
     MessageLineComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, HammerModule],
   providers: [],
   bootstrap: [AppComponent]
 })
