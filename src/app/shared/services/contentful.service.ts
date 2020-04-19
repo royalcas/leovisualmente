@@ -35,7 +35,6 @@ export class ContentfulService {
 
 
   mapProject(item: any): IProject {
-    console.log(item);
     const project: IProject = {
       description: item.fields.description,
       technicalSpecifications: item.fields.technicalSpecifications,
