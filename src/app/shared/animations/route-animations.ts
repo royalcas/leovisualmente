@@ -56,7 +56,6 @@ export const slideInAnimation =
     transition('diamonds => hearths', transitionIncrement),
     transition('diamonds => duck', transitionIncrement),
     transition('clubs => hearths', transitionIncrement),
-    transition('clubs => duck', transitionIncrement),
 
     transition('* => duck', transitionIncrement),
     transition('duck => *', transitionDecrement),

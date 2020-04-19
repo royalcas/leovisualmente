@@ -26,7 +26,8 @@ const appRoutes: Routes = [
   },
   {
     path: 'duck',
-    loadChildren: './personal-introduction/personal-introduction.module#PersonalIntroductionModule'
+    loadChildren: './personal-introduction/personal-introduction.module#PersonalIntroductionModule',
+    component: PostalLayoutOutletComponent
   },
   { path: 'posters', loadChildren: () => PostersModule },
   { path: '**', component: PageNotFoundComponent }
