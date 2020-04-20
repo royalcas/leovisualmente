@@ -1,4 +1,8 @@
 @import 'palette';
+@import 'mixins';
+
+$poster-width: 300px;
+$poster-height: 500px;
 :host {
   width: 100%;
   display: flex;
@@ -17,8 +21,8 @@
   .portfolio-item {
     position: relative;
     overflow: hidden;
-    height: 500px;
-    width: 300px;
+    height: $poster-height * .7;
+    width: $poster-width * .7;
     cursor: pointer;
     margin-right: 10px;
     box-shadow: 0 2px 2px rgba(0,0,0,.24), 0 0 2px rgba(0,0,0,.12);
@@ -29,10 +33,19 @@
     background-color:$main-color;
 
     img {
-      height: 500px;
-      width: 300px;
+      height: $poster-height* .7;
+      width: $poster-width* .7;
       object-fit: cover;
       object-position: center;
+    }
+
+    @include for-tablet-portrait-up {
+      height: $poster-height;
+      width: $poster-width;
+      img {
+        height: $poster-height;
+        width: $poster-width;
+      }
     }
 
     &:nth-child(4) {

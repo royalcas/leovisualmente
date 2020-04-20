@@ -1,5 +1,14 @@
+@import 'mixins';
 .leo-waiting {
+  order: -1;
+  text-align: center;
+  @include for-tablet-portrait-up {
+    order: 2;
+  }
   img {
-    max-width: 100%;
+    max-width: 50%;
+    @include for-tablet-portrait-up {
+      max-width: 100%;
+    }
   }
 }

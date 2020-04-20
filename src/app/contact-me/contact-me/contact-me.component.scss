@@ -1,6 +1,10 @@
+@import 'mixins';
+
 .contact-greeting {
-  font-size: 2rem;
+
+    font-size: 2rem;
   font-family: "Cedarville Cursive", cursive;
+  margin: 0;
 }
 
 .contact-message-wrapper {
@@ -8,6 +12,13 @@
   background-image:
     linear-gradient(#eee .1em, transparent .1em);
   background-size: 100% 2.4rem;
+  flex-grow: 1;
+}
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 #contactMesage {
@@ -17,6 +28,7 @@
   border: 0px;
   line-height: 1.23;
   resize: none;
+  height: 100%;
 
   &:focus {
     color: black;
