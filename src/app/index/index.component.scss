@@ -47,14 +47,16 @@
     align-items: center;
     justify-content: center;
     position: relative;
-
-    .visits-text {
-      position: absolute;
-      top: 50%;
-      left: calc(50% + 100px);
-      text-align: left;
-      transform: translateY(-80%);
+    @include for-tablet-portrait-up{
+      .visits-text {
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 100px);
+        text-align: left;
+        transform: translateY(-80%);
+      }
     }
+
   }
 
   #mixingCards {
