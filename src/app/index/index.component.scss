@@ -71,6 +71,16 @@
   .action-container {
     padding: 20px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+      margin-bottom: 10px;
+    }
+    @include for-tablet-portrait-up{
+      flex-direction: row;
+    }
   }
 
 
@@ -144,6 +154,11 @@
   font-family: "Cedarville Cursive", cursive;
   color: white;
   text-align: center;
+  display: flex;
+  text-align: center;
+  @include for-tablet-landscape-up {
+    text-align: left;
+  }
 }
 .random-cards-container {
   display: flex;

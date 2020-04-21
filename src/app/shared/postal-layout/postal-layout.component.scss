@@ -66,6 +66,14 @@
             color:$linkActiveColor;
           }
 
+          .mat-icon {
+            width: 14px;
+            height: 14px;
+            @include for-tablet-landscape-up {
+              width: 24px;
+              height: 24px;
+            }
+          }
 
         }
       }

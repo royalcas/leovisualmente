@@ -1,7 +1,30 @@
+@import 'mixins';
+
 .social-links-container button {
   padding: 8px;
 }
 
 .mat-icon-button {
   padding: 0px;
+  width: 30px;
+  height: 30px;
+  line-height: 24px;
+  @include for-tablet-landscape-up {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .mat-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: initial;
+    @include for-tablet-landscape-up {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  }
 }
+
+
