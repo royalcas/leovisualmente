@@ -31,7 +31,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run build
+          npm run publish
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:

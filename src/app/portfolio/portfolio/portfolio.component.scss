@@ -15,6 +15,7 @@ $poster-height: 500px;
   flex-wrap: nowrap;
   flex-direction: row;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   -ms-touch-action: pan-x;
   touch-action: pan-x;
 
