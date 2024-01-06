@@ -33,7 +33,7 @@
   }
   .hand-container:before {
     content: '';
-    background: url(/assets/intro/HandHome.png) no-repeat center left;
+    background: url("~src/assets/intro/HandHome.png") no-repeat center left;
     display: block;
     width: 100%;
     height: 100%;
