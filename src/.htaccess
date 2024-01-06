@@ -1,4 +1,6 @@
 <IfModule mod_rewrite.c>
+  DirectoryIndex index.html
+  ErrorDocument 404 index.html
   RewriteEngine On
 
   # Redirection of requests to index.html
