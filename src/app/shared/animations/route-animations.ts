@@ -6,7 +6,7 @@ const transitionIncrement = [
     style({
       display: 'flex'
     })
-  ]),
+  ], { optional: true }),
   query(':enter', [
     style({ transform: 'translateY(100vh)'})
   ], { optional: true }),
@@ -30,7 +30,7 @@ const transitionDecrement = [
     style({
       display: 'flex'
     })
-  ]),
+  ], { optional: true }),
   query(':enter', [
     style({ transform: 'translateY(-100vh)'})
   ], { optional: true }),

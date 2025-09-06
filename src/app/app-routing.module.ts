@@ -13,23 +13,23 @@ const appRoutes: Routes = [
   { path: 'home', component: IndexComponent },
   {
     path: 'contact',
-    loadChildren: './contact-me/contact-me.module#ContactMeModule'
+    loadChildren: () => import('./contact-me/contact-me.module').then(m => m.ContactMeModule)
   },
   {
     path: 'my-work',
-    loadChildren: './portfolio/portfolio.module#PortfolioModule',
+    loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule),
     component: PostalLayoutOutletComponent
   },
   {
     path: 'funny-facts',
-    loadChildren: './funny-facts/funny-facts.module#FunnyFactsModule'
+    loadChildren: () => import('./funny-facts/funny-facts.module').then(m => m.FunnyFactsModule)
   },
   {
     path: 'duck',
-    loadChildren: './personal-introduction/personal-introduction.module#PersonalIntroductionModule',
+    loadChildren: () => import('./personal-introduction/personal-introduction.module').then(m => m.PersonalIntroductionModule),
     component: PostalLayoutOutletComponent
   },
-  { path: 'posters', loadChildren: () => PostersModule },
+  { path: 'posters', loadChildren: () => import('./posters/posters.module').then(m => m.PostersModule) },
   { path: '**', component: PageNotFoundComponent }
 ];
 

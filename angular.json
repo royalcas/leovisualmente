@@ -32,7 +32,8 @@
               "src/styles/leo.material.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "sourceMap": true
           },
           "configurations": {
             "production": {
