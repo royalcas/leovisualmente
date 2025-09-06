@@ -22,44 +22,43 @@ import { RouterModule } from '@angular/router';
 import { PostalLayoutOutletComponent } from './postal-layout-outlet/postal-layout-outlet.component';
 
 @NgModule({
-  imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule, RouterModule],
-  declarations: [
-    MainLayoutComponent,
-    PostalLayoutComponent,
-    PostalTitleComponent,
-    PostalTitleNoteComponent,
-    PostalOptionsComponent,
-    PostalContentComponent,
-    IconButtonComponent,
-    TagSelectionComponent,
-    LoadingComponent,
-    DialogGalleryComponent,
-    GalleryComponent,
-    MediaDisplayComponent,
-    SocialLinksComponent,
-    PostalLayoutOutletComponent,
-    CfHtmlPipe
-  ],
-  exports: [
-    MainLayoutComponent,
-    FlexLayoutModule,
-    PostalLayoutComponent,
-    PostalTitleComponent,
-    PostalTitleNoteComponent,
-    PostalOptionsComponent,
-    PostalContentComponent,
-    TagSelectionComponent,
-    LoadingComponent,
-    MaterialModule,
-    DialogGalleryComponent,
-    GalleryComponent,
-    MediaDisplayComponent,
-    ChartsModule,
-    SocialLinksComponent,
-    PostalLayoutOutletComponent,
-    CfHtmlPipe
-  ],
-  entryComponents: [DialogGalleryComponent],
-  providers: [CfHtmlPipe]
+    imports: [CommonModule, FlexLayoutModule, MaterialModule, ChartsModule, RouterModule],
+    declarations: [
+        MainLayoutComponent,
+        PostalLayoutComponent,
+        PostalTitleComponent,
+        PostalTitleNoteComponent,
+        PostalOptionsComponent,
+        PostalContentComponent,
+        IconButtonComponent,
+        TagSelectionComponent,
+        LoadingComponent,
+        DialogGalleryComponent,
+        GalleryComponent,
+        MediaDisplayComponent,
+        SocialLinksComponent,
+        PostalLayoutOutletComponent,
+        CfHtmlPipe
+    ],
+    exports: [
+        MainLayoutComponent,
+        FlexLayoutModule,
+        PostalLayoutComponent,
+        PostalTitleComponent,
+        PostalTitleNoteComponent,
+        PostalOptionsComponent,
+        PostalContentComponent,
+        TagSelectionComponent,
+        LoadingComponent,
+        MaterialModule,
+        DialogGalleryComponent,
+        GalleryComponent,
+        MediaDisplayComponent,
+        ChartsModule,
+        SocialLinksComponent,
+        PostalLayoutOutletComponent,
+        CfHtmlPipe
+    ],
+    providers: [CfHtmlPipe]
 })
 export class SharedModule {}

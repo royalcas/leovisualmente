@@ -14,13 +14,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-    MaterialModule
-  ],
-  declarations: [PostersComponent, PosterDialogComponent],
-  entryComponents: [ PosterDialogComponent ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        SharedModule,
+        MaterialModule
+    ],
+    declarations: [PostersComponent, PosterDialogComponent]
 })
 export class PostersModule { }
