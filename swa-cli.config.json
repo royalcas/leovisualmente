@@ -1,0 +1,7 @@
+{
+  "appLocation": ".",
+  "outputLocation": "dist",
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}
