@@ -72,6 +72,7 @@
     padding: 20px;
     flex-grow: 1;
     display: flex;
+    gap:1rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -198,6 +199,7 @@
   padding: 20px;
   padding-bottom: 100px;
   flex-grow: 1;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;

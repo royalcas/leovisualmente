@@ -16,8 +16,8 @@
     </div>
 
       <div class="action-container" *ngIf="!gettingCards">
-        <button *ngIf="visits % 2 === 0" class="btn-primary" (click)="goToPosters()">go to special gallery!</button>
-        <button class="btn-primary" (click)="getCards()">give me cards!</button>
+        <button mat-stroked-button color="accent" *ngIf="visits % 2 === 0" (click)="goToPosters()">go to special gallery!</button>
+        <button mat-stroked-button color="accent" (click)="getCards()">give me cards!</button>
       </div>
 
   </div>
@@ -35,8 +35,8 @@
     <div class="hand-container">
     </div>
     <div class="card-actions">
-      <button class="btn-primary" (click)="getMoreCards()">another cards</button>
-      <button class="btn-primary" (click)="goToSite()">go to site</button>
+      <button mat-stroked-button color="accent" (click)="getMoreCards()">deal more cards</button>
+      <button mat-stroked-button color="accent" (click)="goToSite()">go to site</button>
     </div>
   </div>
 </div>

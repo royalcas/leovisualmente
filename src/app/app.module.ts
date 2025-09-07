@@ -10,6 +10,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { MessageLineComponent } from "./index/message-line/message-line.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatIconModule } from "@angular/material/icon";
   ],
   imports: [
     MatIconModule,
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
