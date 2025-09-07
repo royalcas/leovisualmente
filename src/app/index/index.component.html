@@ -4,9 +4,7 @@
 
     <div class="shuffle-container">
 
-      <video #shuffleCardsVideo id="mixingCards" loop muted autoplay (loadeddata)="playVideo()">
-        <source src="./assets/intro/mixing-cards.mp4" type="video/mp4">
-      </video>
+      <img #shuffleCardsVideo id="mixingCards" src="./assets/intro/mixing-cards.gif" />
       <ng-container *ngIf="!gettingCards">
         <app-message-line *ngIf="visits % 2 === 1; else alternativeDialogTmpl" class="visits-text" [paragraphs]="['Hello there', 'Welcome to the studio','Wanna see something cool?']"></app-message-line>
         <ng-template #alternativeDialogTmpl>
