@@ -7,13 +7,18 @@ $app-primary: mat.define-palette($leo-blue);
 $app-accent: mat.define-palette($leo-accent);
 $app-warn: mat.define-palette(mat.$red-palette);
 
+$leo-typography-config: mat.define-typography-config(
+  $font-family: "MetaPro-Book",
+);
+
 // Create the theme object (a Sass map containing all of the palettes).
 $app-theme: mat.define-light-theme((
   color: (
     primary: $app-primary,
     accent: $app-accent,
     warn: $app-warn,
-  )
+  ),
+  typography: $leo-typography-config,
 ));
 
 // Include theme styles for core and each component used in your app.
@@ -71,4 +76,18 @@ $app-theme: mat.define-light-theme((
 
 .cdk-dialog-container {
   background: white;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  border-color: $main-color;
+  border-width: 2px;
+  border-radius: 0px;
+  &.mat-accent {
+    border-color: $accent-color;
+  }
+}
+
+
+:root {
+  --mdc-shape-small: 0px;
 }

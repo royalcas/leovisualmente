@@ -6,6 +6,10 @@
   width: 100%;
   height: 100%;
   background-color: #262626;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .back-gallery {
@@ -13,7 +17,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
   @include for-tablet-portrait-up{
     height: 100%;
   }
@@ -29,6 +32,20 @@ h3{
   font-size: 1rem;
 }
 
+.project-information-container {
+  max-height: 200px;
+  overflow-y: auto;
+
+  @include for-tablet-portrait-up{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+    > div:first-child {
+      flex: 1 1 70%;
+    }
+  }
+}
 
 .project-details-container {
   position: absolute;
@@ -44,26 +61,13 @@ h3{
 }
 
 .gallery-information {
+  order: 3;
   z-index: 1;
   position: relative;
   background: rgba(255, 255, 255, 1);
   width: 100%;
   padding: 20px;
-
-  position: absolute;
-  top: 50%;
-  max-height: 50%;
   overflow-y: auto;
-  @include for-tablet-portrait-up{
-    margin-left: 30px;
-    top: auto;
-    width: 350px;
-    margin-left: 30px;
-    max-width: 90%;
-    background: rgba(255, 255, 255, .7);
-    max-height: inherit;
-    bottom: 45px;
-  }
 }
 
 
@@ -75,14 +79,11 @@ h3{
   overflow-y: auto;
 }
 
-.project-details-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 10px;
-  font-size: 2rem;
-  z-index: 1;
-  position: relative;
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
 }
 
 .technical-specification {

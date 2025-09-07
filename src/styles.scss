@@ -30,16 +30,24 @@ h2 {
 }
 
 .btn-primary {
-  font-family: "Cedarville Cursive", cursive;
-  color: $accent-text-color;
+  font-family: "MetaPro-Book", serif;
+  color: black;
   font-size: 1.2rem;
-  color: $main-color;
   text-decoration: none;
-  border: 1px solid $main-color;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.btn-primary:visited {
+  color: black;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
 }
 
 .accent {
-  font-family: "Cedarville Cursive", cursive;
   color: $accent-text-color;
 }
 
@@ -62,7 +70,6 @@ p {
 
 button {
   cursor: pointer;
-  font-family: "Cedarville Cursive", cursive;
   color: $accent-text-color;
   font-size: 1.2rem;
   border: 0px;
@@ -78,6 +85,5 @@ button {
 }
 
 .primary {
-  font-family: "Cedarville Cursive", cursive;
   color: $accent-text-color;
 }
