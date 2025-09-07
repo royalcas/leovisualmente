@@ -50,8 +50,11 @@ export class IndexComponent implements OnInit {
 
   getMoreCards() {
     this.showCards = false;
-    this.requestCards$.next(true);
-    timer(1000).subscribe(() => this.showCards = true);
+    
+    timer(1000).subscribe(() => {
+      this.requestCards$.next(true);
+      this.showCards = true;
+    });
   }
 
 }

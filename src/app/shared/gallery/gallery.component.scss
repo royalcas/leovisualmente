@@ -38,16 +38,26 @@
     .dot-slide {
       width: 16px;
       height: 16px;
-      background: url("~src/assets/icons/gallery_off.png") no-repeat center center;
       margin: 5px;
+      padding: 5px;
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      &:before {
+        content: "—";
+        transition: all .3s ease-in-out;
+      }
 
       &.active {
-        background: url("~src/assets/icons/gallery_on.png") no-repeat center center;
+        outline: 1px solid white;
+        outline-offset: 2px;
+        &::before {
+          transform: rotate(90deg);
+        }
       }
+
     }
   }
 }
