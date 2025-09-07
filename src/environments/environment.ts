@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   contentfulConfig: {
-    space: 'qdnzw3cefdy1',
-    accessToken: 'NdjvWIAYqQpkWYLEOHQjCF2NVN79JmCxWMtcgPbnOdo'
+    space: 'kgpa52v2k5qa',
+    accessToken: 'QxE14HgjRveeOFaX_abnfWdH62cWSEMtF2SqCXr8Bic'
   }
 };
 

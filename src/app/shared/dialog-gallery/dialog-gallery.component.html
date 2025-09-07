@@ -1,11 +1,10 @@
-<button aria-label="Close" class="close-top-button" mat-dialog-close>
+<button mat-icon-button aria-label="Close" color="primary" class="close-top-button" mat-dialog-close>
   <mat-icon aria-hidden>close</mat-icon>
 </button>
-<mat-dialog-content class="content">
+<div mat-dialog-content class="content">
   <app-gallery class="back-gallery" [images]="data.images"></app-gallery>
   <div class="gallery-information">
     <h2>{{data.title}}</h2>
-    <div class="description"[innerHTML]="descriptionHtml" ></div>
+    <div class="description" [innerHTML]="descriptionHtml" ></div>
   </div>
-
-</mat-dialog-content>
+</div>
