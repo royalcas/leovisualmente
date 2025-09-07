@@ -4,7 +4,7 @@ import { PostersService } from './../posters.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProject } from 'src/app/portfolio/portfolio/models/portfolio';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-posters',

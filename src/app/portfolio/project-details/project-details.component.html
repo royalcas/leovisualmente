@@ -2,7 +2,7 @@
 <div class="project-details-container" *ngIf="project$ | async as project">
   <app-gallery class="back-gallery" [images]="project.images" (selected)="setGalleryInformation($event)"></app-gallery>
     <div class="project-details-actions">
-      <button mat-icon-button class="close-button" aria-label="Close" [routerLink]="['/my-work', project.category]">
+      <button mat-icon-button color="primary" class="close-button" aria-label="Close" [routerLink]="['/my-work', project.category]">
         <mat-icon aria-hidden>close</mat-icon>
       </button>
     </div>

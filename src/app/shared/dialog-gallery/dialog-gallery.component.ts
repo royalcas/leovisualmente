@@ -1,7 +1,7 @@
 import { SafeHtml } from '@angular/platform-browser';
 
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { IDialogGalleryModel } from './idialog-gallery.model';
 import { CfHtmlPipe } from '../pipes/cf-html.pipe';
 
