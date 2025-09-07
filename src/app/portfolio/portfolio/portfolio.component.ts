@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PortfolioService } from './services/portfolio.service';
 import { Observable, Subject } from 'rxjs';
 import { IProject } from './models/portfolio';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap, map, tap } from 'rxjs/operators';
 
